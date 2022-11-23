@@ -1,0 +1,92 @@
+:root {
+    --color-bright: #E1E1E1;
+    --color-grey: #A3A3AC;
+}
+
+* {
+    font-size: 22px;
+    font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+header>span {
+    display: inline-block;
+    width: 102px;
+    color: var(--color-grey);
+}
+
+section.helo {
+    height: 100vh;
+    background-image: url(./images/blake-connally-B3l0g6HLxr8-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+section.helo>div {
+    width: 100%;
+    height: 100%;
+    color: var(--color-bright);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-image: radial-gradient(50% 50% at 50% 47.02%, rgba(23, 25, 28, 0.7) 0%, rgba(23, 25, 28, 0.532) 51.35%, rgba(23, 25, 28, 0.098) 100%);
+}
+
+section.helo>div>nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 125px;
+    color: var(--color-grey);
+    gap: 1.8rem;
+}
+
+section.helo>div>* {
+    margin: 0;
+}
+
+section.helo>div button {
+    background: #FEC202;
+    height: 72px;
+    width: 223px;
+    border-radius: 100px;
+    font-weight: 800;
+    font-size: 27px;
+    color: #222222;
+}
+
+section.helo>div h4 {
+    font-size: 150%;
+}
+
+section.helo>div h1>* {
+    font-size: 300%;
+    word-spacing: 0.4rem;
+    margin: 0 0.4rem;
+}
+
+section.helo>div h1>span {
+    font-weight: initial;
+}
+
+section.helo>div h1>b {
+    font-weight: bold;
+}
