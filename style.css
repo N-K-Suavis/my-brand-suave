@@ -1,15 +1,22 @@
 :root {
+    --side-padding: 8%;
+    --color-back: #EAEFF5;
+    --color-dark: #1D1D20;
     --color-bright: #E1E1E1;
-    --color-grey: #A3A3AC;
+    --color-gray: #A3A3AC;
+    --color-grey: #53535C;
+    --color-orange: #FEC202;
 }
 
 * {
+    margin: 0;
     font-size: 22px;
     font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 body {
     margin: 0;
+    background: var(--color-back);
 }
 
 a {
@@ -23,6 +30,12 @@ header {
     width: 100%;
     margin-top: 30px;
     text-align: center;
+    z-index: 10;
+}
+
+section {
+    padding: 0 var(--side-padding);
+    position: relative;
 }
 
 header>span {
@@ -36,9 +49,12 @@ section.helo {
     background-image: url(./images/blake-connally-B3l0g6HLxr8-unsplash.jpg);
     background-size: cover;
     background-position: center;
+    margin-bottom: 2.5rem;
+    box-shadow: 0px 3px 90px 100px var(--color-dark), inset 0px 3px 57px 55px var(--color-dark);
 }
 
 section.helo>div {
+    position: relative;
     width: 100%;
     height: 100%;
     color: var(--color-bright);
@@ -54,13 +70,9 @@ section.helo>div>nav {
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: 125px;
+    left: 0;
     color: var(--color-grey);
     gap: 1.8rem;
-}
-
-section.helo>div>* {
-    margin: 0;
 }
 
 section.helo>div button {
@@ -89,4 +101,46 @@ section.helo>div h1>span {
 
 section.helo>div h1>b {
     font-weight: bold;
+}
+
+
+section.about,
+section.about>* {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+section.about {
+    height: 100vh;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--color-dark);
+}
+
+section.about>.content {
+    width: 50%;
+    gap: 1rem;
+}
+
+section.about>.content>* {
+    width: 100%;
+}
+
+section.about>.content>.body {
+    color: var(--color-grey);
+}
+
+section.about>.content>.title>* {
+    font-size: 200%;
+}
+
+section.about>.content>span {
+    font-size: 150%;
+    color: var(--color-orange);
+}
+
+section.about>.content>.my-links {
+    display: flex;
+    gap: 2.5rem;
 }
