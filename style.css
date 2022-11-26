@@ -115,6 +115,7 @@ header {
 
 footer {
     background-color: var(--color-bright-2);
+    color: var(--color-grey);
     text-align: center;
     padding: 3rem;
 }
@@ -123,6 +124,10 @@ section {
     min-height: 50vh;
     padding: 0 var(--side-padding);
     position: relative;
+}
+
+section.first {
+    margin-top: 7rem;
 }
 
 header>span {
@@ -363,4 +368,34 @@ section.sign>div input[type=checkbox] {
     width: fit-content;
     display: inline-block;
     margin-right: 10px;
+}
+
+.list>.item {
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: row;
+    color: var(--color-dark);
+}
+
+.list>.item>.count {
+    font-size: 400%;
+    padding: 0 2rem;
+}
+
+.list>.item>div>h2 {
+    font-size: 250%;
+    margin-top: .3rem;
+}
+
+.list>.item>div>.date {
+    color: var(--color-gray);
+    margin: .5rem 0;
+}
+
+.list>.item>div>.body {
+    color: var(--color-grey);
+}
+
+section.work {
+    padding: 3rem var(--side-padding);
 }
