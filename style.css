@@ -399,3 +399,68 @@ section.sign>div input[type=checkbox] {
 section.work {
     padding: 3rem var(--side-padding);
 }
+
+section.contact {
+    display: flex;
+    flex-direction: row;
+}
+
+section.contact>div {
+    width: 50%;
+}
+
+section.contact>div svg path {
+    fill: var(--color-grey);
+}
+
+section.contact>div {
+    color: var(--color-grey);
+}
+
+section.contact>div>.address {
+    padding: 3rem 1.5rem;
+}
+
+section.contact>div>.address>div {
+    display: flex;
+    align-items: center;
+    margin: .5rem 0;
+    gap: 1.5rem;
+}
+
+section.contact.first {
+    padding-top: 0;
+}
+
+section.contact {
+    padding: 3rem var(--side-padding);
+}
+
+section.contact>div form>label>p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+section.contact>div form>label {
+    margin: 1rem 0;
+    display: block;
+}
+
+section.contact>div form>label>textarea,
+section.contact>div form>label>input {
+    width: -webkit-fill-available;
+    padding: .4rem .7rem;
+    outline: none;
+    background-color: var(--color-bright-2);
+    border: none;
+    border-radius: 5px;
+}
+
+section.contact>div form>label>textarea {
+    resize: vertical;
+}
+
+section.contact>div form>button {
+    padding: .4rem 1rem;
+}
