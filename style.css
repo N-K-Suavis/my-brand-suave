@@ -525,3 +525,39 @@ section.contact>div form>button {
     color: var(--color-gray);
     fill: var(--color-gray);
 }
+
+section.blog {
+    color: var(--color-dark);
+}
+
+section.blog img {
+    max-width: 100%;
+    margin: 1rem 0;
+    border-radius: 10px;
+}
+
+section.blog .info {
+    display: flex;
+    justify-content: space-between;
+}
+
+section.blog .info,
+section.blog .info * {
+    color: var(--color-gray);
+    fill: var(--color-gray);
+}
+
+section.blog .feedbacks {
+    display: flex;
+    gap: 1rem;
+}
+
+section.blog .feedbacks>div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+section.blog .body {
+    margin: 1rem 0 3rem;
+}
