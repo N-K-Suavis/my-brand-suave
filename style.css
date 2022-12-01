@@ -465,7 +465,7 @@ section.contact>div form>button {
     padding: .4rem 1rem;
 }
 
-.blogList>.blogItem {
+.blogList .blogItem {
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
@@ -475,39 +475,39 @@ section.contact>div form>button {
     background-color: #CED5DD;
 }
 
-.blogList>.blogItem .image {
+.blogList .blogItem .image {
     width: 800px;
     background-position: center;
     background-size: cover;
     min-width: 150px;
 }
 
-.blogList>.blogItem>.content {
+.blogList .blogItem>.content {
     padding: 1rem 1rem 1rem 0;
 }
 
-.blogList>.blogItem h1,
-.blogList>.blogItem h2,
-.blogList>.blogItem h3,
-.blogList>.blogItem h4,
-.blogList>.blogItem h5,
-.blogList>.blogItem h6 {
+.blogList .blogItem h1,
+.blogList .blogItem h2,
+.blogList .blogItem h3,
+.blogList .blogItem h4,
+.blogList .blogItem h5,
+.blogList .blogItem h6 {
     color: var(--color-dark);
     margin-bottom: 1.2rem;
     font-size: 130%;
 }
 
-.blogList>.blogItem .date {
+.blogList .blogItem .date {
     color: var(--color-gray);
     margin: .3rem 0;
 }
 
-.blogList>.blogItem .body {
+.blogList .blogItem .body {
     color: var(--color-grey);
     margin: .3rem 0;
 }
 
-.blogList>.blogItem .feedbacks {
+.blogList .blogItem .feedbacks {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -515,13 +515,13 @@ section.contact>div form>button {
     margin-top: 1.2rem;
 }
 
-.blogList>.blogItem .feedbacks>* {
+.blogList .blogItem .feedbacks>* {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.blogList>.blogItem .feedbacks * {
+.blogList .blogItem .feedbacks * {
     color: var(--color-gray);
     fill: var(--color-gray);
 }
