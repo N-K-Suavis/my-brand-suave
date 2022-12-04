@@ -5,9 +5,9 @@ export default class Blog {
         this.owner = owner
         this.body = body
         this.date = new Date()
-        this.likes = 0
-        this.comments = 0
-        this.shares = 0
+        this.likes = []
+        this.comments = []
+        this.shares = []
         this.profile = profile
     }
 }

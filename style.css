@@ -542,6 +542,10 @@ section.blog {
     color: var(--color-dark);
 }
 
+section.blog *::first-letter {
+    text-transform: capitalize;
+}
+
 section.blog img {
     width: 100%;
     max-height: 90vh;

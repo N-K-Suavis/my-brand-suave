@@ -24,10 +24,10 @@ blogImage.setAttribute('src', blog.profile)
 blogTitle.innerText = blog.title
 blogOwner.innerText = blog.owner.name
 
-blogBody.innerHTML = blog.body.join('<br/><br/>')
+blogBody.innerHTML = blog.body.map(each => (`<p>${each}</p>`)).join('<br/>')
 
 blogDate.innerText = (new Date(blog.date)).yyyymmdd()
 
-blogLikes.innerText = blog.likes
-blogComments.innerText = blog.comments
-blogShares.innerText = blog.shares
+blogLikes.innerText = blog.likes.length
+blogComments.innerText = blog.comments.length
+blogShares.innerText = blog.shares.length
