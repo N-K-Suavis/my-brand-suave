@@ -7,6 +7,7 @@
     <meta name="viewport" content="maximum-scale=1,width=device-width,initial-scale=1,user-scalable=0">
     <link rel="stylesheet" href="./style.css">
     <script type="module" defer src="/js/users/sign.js"></script>
+    <script type="module" defer src="/js/blogs/getblog.js"></script>
 </head>
 
 <body>
@@ -20,9 +21,9 @@
     </header>
     <main>
         <section class="first blog">
-            <h2 style="all: revert;text-align: center;">Blog title</h2>
-            <p style="text-align: center;font-size: 80%;">Suavis</p>
-            <img alt="blog image" src="./images/kenny-eliason-5afenxnLDjs-unsplash.jpg" />
+            <h2 style="all: revert;text-align: center;" id="blogTitle">Blog title</h2>
+            <p style="text-align: center;font-size: 80%;" id="blogOwner">Suavis</p>
+            <img id="blogImage" alt="blog image" src="./images/elementor-placeholder-image.webp" />
             <div class="info">
                 <div class="feedbacks">
                     <div>
@@ -34,7 +35,7 @@
                                     fill="#8B8B97" />
                             </svg>
                         </span>
-                        <span> 10</span>
+                        <span id="blogLikes"> 10</span>
                     </div>
                     <div>
                         <span>
@@ -45,7 +46,7 @@
                                     fill="#8B8B97" />
                             </svg>
                         </span>
-                        <span> 10</span>
+                        <span id="blogComments"> 10</span>
                     </div>
                     <div>
                         <span>
@@ -56,12 +57,12 @@
                                     fill="#8B8B97" />
                             </svg>
                         </span>
-                        <span> 10</span>
+                        <span id="blogShares"> 10</span>
                     </div>
                 </div>
-                <p class="date">Oct 01, 2022</p>
+                <p class="date" id="blogDate">Oct 01, 2022</p>
             </div>
-            <div class="body">
+            <div class="body" id="blogBody">
                 a regular record of your thoughts, opinions, or experiences that you put on the internet for other
                 people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet
                 for other people to read, a regular record of your thoughts, opinions, or experiences that you put on

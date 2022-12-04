@@ -1,7 +1,5 @@
 import signoutsvg from './signoutsvg.js'
 
-console.log(signoutsvg)
-
 let sign = document.querySelector('header #sign')
 let user = localStorage.getItem('user')
 
@@ -24,6 +22,7 @@ function signOutCheck() {
     let back = document.createElement('div')
     back.setAttribute('class', 'back')
     back.addEventListener('click', e => {
+        document.body.style.overflow = 'auto'
         box.remove()
     })
     box.append(back)
@@ -40,6 +39,7 @@ function signOutCheck() {
     spanY.setAttribute('class', 'y')
     spanY.innerText = 'sign out'
     spanY.addEventListener('click', e => {
+        document.body.style.overflow = 'auto'
         signOut()
     })
     div.append(spanY)
@@ -47,6 +47,7 @@ function signOutCheck() {
     spanN.setAttribute('class', 'n')
     spanN.innerText = 'cancel'
     spanN.addEventListener('click', e => {
+        document.body.style.overflow = 'auto'
         box.remove()
     })
     div.append(spanN)
@@ -54,6 +55,7 @@ function signOutCheck() {
 
     box.append(front)
     document.body.append(box)
+    document.body.style.overflow = 'hidden'
 }
 
 export function signOut() {

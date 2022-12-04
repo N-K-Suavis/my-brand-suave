@@ -41,8 +41,8 @@ if (localStorage.getItem('users')) {
     console.log(users)
 }
 else {
-    adduser('benn', 'benn@email.dom', '12345')
-    adduser('dalton', 'dalton@email.dom', '12345')
+    adduser('suavis', 'suave@email.dom', '12345')
+    adduser('ndatinya', 'ndatinya@email.dom', '12345')
 }
 
 export function find(attr, value) {

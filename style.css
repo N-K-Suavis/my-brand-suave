@@ -480,14 +480,15 @@ section.contact>div form>button {
 }
 
 .blogList .blogItem .image {
-    width: 800px;
+    width: 25%;
+    min-width: 170px;
     background-position: center;
     background-size: cover;
-    min-width: 150px;
 }
 
 .blogList .blogItem>.content {
     padding: 1rem 1rem 1rem 0;
+    flex: 1;
 }
 
 .blogList .blogItem h1,
@@ -509,6 +510,13 @@ section.contact>div form>button {
 .blogList .blogItem .body {
     color: var(--color-grey);
     margin: .3rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .blogList .blogItem .feedbacks {
@@ -535,7 +543,9 @@ section.blog {
 }
 
 section.blog img {
-    max-width: 100%;
+    width: 100%;
+    max-height: 90vh;
+    object-fit: cover;
     margin: 1rem 0;
     border-radius: 10px;
 }
@@ -587,7 +597,7 @@ section.blog .body {
 
 #signout .back {
     background-color: #000a;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
 }
 
 #signout>div.front {
