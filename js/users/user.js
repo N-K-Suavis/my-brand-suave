@@ -44,3 +44,12 @@ else {
     adduser('benn', 'benn@email.dom', '12345')
     adduser('dalton', 'dalton@email.dom', '12345')
 }
+
+export function find(attr, value) {
+    for (let i of users) {
+        if (i[attr] === value) {
+            return i
+        }
+    }
+    return null
+}

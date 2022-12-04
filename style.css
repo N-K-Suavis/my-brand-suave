@@ -565,3 +565,69 @@ section.blog .feedbacks>div {
 section.blog .body {
     margin: 1rem 0 3rem;
 }
+
+
+
+
+#signout {
+    z-index: 100;
+}
+
+#signout,
+#signout .back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signout .back {
+    background-color: #000a;
+    backdrop-filter: blur(5px);
+}
+
+#signout>div.front {
+    position: relative;
+    width: 400px;
+    max-width: 90%;
+    height: 400px;
+    border-radius: 10px;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 5px 20px #222;
+}
+
+#signout>div.front svg {
+    max-width: 100%;
+}
+
+#signout>div.front p {
+    text-align: center;
+    padding: .5rem 1rem;
+}
+
+#signout>div.front div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#signout>div.front div>* {
+    padding: .5rem 1rem;
+    margin: .7rem 0;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px currentColor, 0 1px 10px #666;
+}
+
+#signout>div.front div>.y {
+    color: green;
+}
+
+#signout>div.front div>.n {
+    color: red;
+}
