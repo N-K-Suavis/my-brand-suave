@@ -1,5 +1,5 @@
 export default class Blog {
-    constructor(title = '', owner = null, body = null, profile = 'https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png') {
+    constructor(title = '', owner = null, body = null) {
         this.id = newId(blogs.length)
         this.title = title
         this.owner = owner
@@ -8,7 +8,6 @@ export default class Blog {
         this.likes = []
         this.comments = []
         this.shares = []
-        this.profile = profile
     }
 }
 
@@ -20,64 +19,35 @@ const newId = function (val) {
 export let blogs = []
 
 if (localStorage.getItem('blogs') === null) {
-    addBlog(
-        'title',
-        {
-            email: 'suave@email.dom',
-            name: 'suavis',
+    let one = {
+        title: 'test1',
+        owner: {
+            name: "suavis",
+            email: "suave@email.dom"
         },
-        [
-            'a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read',
-            'a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read',
-            'a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read',
-        ],
-        '/images/kenny-eliason-5afenxnLDjs-unsplash.jpg',
-    )
-    addBlog(
-        'title2',
-        {
-            email: 'ndatinya@email.dom',
-            name: 'ndatinya',
+        body: `<p>A regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read</p>\n<p>
+            <img src=\"https://604now.com/wp-content/uploads/2018/02/banff_town.jpg\" alt=\"\" width=\"1220\" height=\"813\"></p>\n
+            <p>A regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read A regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read</p>\n
+            <p>
+                <img src=\"https://www.arkwildlife.co.uk/wp-content/uploads/2022/07/male-red-bullfinch-bird.jpg\" alt=\"\" width=\"259\" height=\"194\"></p>\n
+            <p>A regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read</p>`,
+    }
+    let two = {
+        title: 'title',
+        owner: {
+            name: "suavis",
+            email: "suave@email.dom"
         },
-        [
-            'a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read',
-            'a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read',
-            'a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read',
-        ],
-        'https://604now.com/wp-content/uploads/2018/02/banff_town.jpg',
-    )
-    addBlog(
-        'title',
-        {
-            email: 'ndatinya@email.dom',
-            name: 'ndatinya',
-        },
-        [
-            'a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read',
-            'a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read',
-            'a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read',
-        ],
-        'https://mobimg.b-cdn.net/v3/fetch/46/46b56921e1afd15a72fa5a241f4d7ab7.jpeg',
-    )
-    addBlog(
-        'title3',
-        {
-            email: 'suave@email.dom',
-            name: 'suavis',
-        },
-        [
-            'a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read',
-            'a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read',
-            'a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read',
-        ],
-        'https://www.pcworld.com/wp-content/uploads/2022/08/dscf0453_final-100797561-orig-1.jpg?quality=50&strip=all',
-    )
+        body: `<p><img src=\"https://www.birdlife.org/wp-content/uploads/2022/09/Pelican_portrait_high-res-scaled.jpg\" alt=\"\" width=\"1341\" height=\"651\"></p>\n<p><strong>A regular record</strong> of your thoughts, opinions, <em><strong>or experiences that you put</strong></em> on the internet for other people to read, a regular record of your thoughts, <em>opinions</em>, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read</p>\n<p><iframe style=\"width: 1021px; height: 573px;\" src=\"https://www.youtube.com/embed/z2HxdYDf0gQ\" width=\"1021\" height=\"573\" allowfullscreen=\"allowfullscreen\"></iframe></p>\n<p>A regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read A regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read A regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read, a regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read&nbsp;</p>\n<p><img src=\"https://www.arkwildlife.co.uk/wp-content/uploads/2022/07/male-red-bullfinch-bird.jpg\" alt=\"\" width=\"988\" height=\"494\"></p>`,
+    }
+    addBlog(one.title, one.owner, one.body)
+    addBlog(two.title, two.owner, two.body)
 }
 
 blogs = JSON.parse(localStorage.getItem('blogs'))
 
-export function addBlog(title = '', owner = '', body = null, profile = 'https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png') {
-    const a = new Blog(title, owner, body, profile)
+export function addBlog(title = '', owner = null, body = '') {
+    const a = new Blog(title, owner, body)
     blogs.push(a)
     localStorage.setItem('blogs', JSON.stringify(blogs))
     return {

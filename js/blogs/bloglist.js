@@ -17,11 +17,6 @@ function display(blog) {
     let box = document.createElement('div')
     box.setAttribute('class', 'blogItem')
 
-    let image = document.createElement('div')
-    image.setAttribute('class', 'image')
-    image.style.backgroundImage = `url(${blog.profile})`
-    box.append(image)
-
     let div = document.createElement('div')
     div.setAttribute('class', 'content')
 
@@ -29,15 +24,9 @@ function display(blog) {
     head.innerText = blog.title
     div.append(head)
 
-    let date = document.createElement('p')
-    date.setAttribute('class', 'date')
-    let d = new Date(blog.date)
-    date.innerText = d.yyyymmdd()
-    div.append(date)
-
     let body = document.createElement('div')
     body.setAttribute('class', 'body')
-    body.innerText = blog.body[0]
+    body.innerHTML = blog.body
     div.append(body)
 
     let more = document.createElement('u')

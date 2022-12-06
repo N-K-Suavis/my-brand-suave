@@ -3,6 +3,8 @@ import signoutsvg from './signoutsvg.js'
 let sign = document.querySelector('header #sign')
 let user = localStorage.getItem('user')
 
+let dash = document.querySelector('header #dashboard')
+
 if (user !== null) {
     user = JSON.parse(user)
     let signOutBut = document.createElement('span')
@@ -13,6 +15,12 @@ if (user !== null) {
     })
     sign.innerHTML = ''
     sign.append(signOutBut)
+
+    let dashboard = document.createElement('a')
+    dashboard.setAttribute('href', '/dashboard/')
+    dashboard.innerText = 'Dashboard'
+    dash.innerText = ''
+    dash.append(dashboard)
 }
 
 function signOutCheck() {

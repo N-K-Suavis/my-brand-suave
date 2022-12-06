@@ -18,13 +18,10 @@ if (urlParams.get('id') === null) {
 
 let blog = blogs.filter(each => each.id == urlParams.get('id'))[0]
 
-blogImage.setAttribute('alt', blog.title)
-blogImage.setAttribute('src', blog.profile)
-
 blogTitle.innerText = blog.title
 blogOwner.innerText = blog.owner.name
 
-blogBody.innerHTML = blog.body.map(each => (`<p>${each}</p>`)).join('<br/>')
+blogBody.innerHTML = blog.body
 
 blogDate.innerText = (new Date(blog.date)).yyyymmdd()
 
