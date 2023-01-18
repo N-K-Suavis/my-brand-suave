@@ -766,7 +766,15 @@ section.blog>*:last-child {
 .dashboard .list.blog ul li:hover {
     border-left-color: var(--color-grey);
 }
-
+.dashboard .list.blog ul li .grey-color{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    flex:1;
+}
 .dashboard .list.blog ul li svg {
     margin-left: 2rem;
 }

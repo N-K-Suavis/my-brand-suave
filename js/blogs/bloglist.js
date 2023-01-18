@@ -1,5 +1,9 @@
-import { blogs } from "./blogs.js";
-
+let allblogs= async function(){
+    let resp= await fetch('http://localhost:3000/blogs/')
+    let blogs = await resp.json()
+    return blogs.blogs
+ }
+    let blogs= await allblogs()
 Date.prototype.yyyymmdd = function () {
     var mm = this.getMonth() + 1; // getMonth() is zero-based
     var dd = this.getDate();
@@ -12,7 +16,7 @@ Date.prototype.yyyymmdd = function () {
 
 function display(blog) {
     let a = document.createElement('a')
-    a.setAttribute('href', `/blog.html?id=${blog.id}`)
+    a.setAttribute('href', `/blog.html?id=${blog._id}`)
 
     let box = document.createElement('div')
     box.setAttribute('class', 'blogItem')
@@ -26,7 +30,7 @@ function display(blog) {
 
     let body = document.createElement('div')
     body.setAttribute('class', 'body')
-    body.innerHTML = blog.body
+    body.innerHTML = blog.content
     div.append(body)
 
     let more = document.createElement('u')

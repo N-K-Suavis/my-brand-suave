@@ -1,5 +1,9 @@
-import { blogs } from './blogs.js'
 
+let singleblog= async function(_id){
+    let resp= await fetch('http://localhost:3000/blogs/'+_id)
+    let blog = await resp.json()
+    return blog.blog
+ }
 Date.prototype.yyyymmdd = function () {
     var mm = this.getMonth() + 1; // getMonth() is zero-based
     var dd = this.getDate();
@@ -16,15 +20,13 @@ if (urlParams.get('id') === null) {
     window.location.assign('/blogs.html')
 }
 
-let blog = blogs.filter(each => each.id == urlParams.get('id'))[0]
-
+let blog = await singleblog(urlParams.get('id'))
 blogTitle.innerText = blog.title
-blogOwner.innerText = blog.owner.name
+blogimage.src= blog.image
+blogBody.innerHTML = blog.content
 
-blogBody.innerHTML = blog.body
+//blogDate.innerText = (new Date(blog.date)).yyyymmdd()
 
-blogDate.innerText = (new Date(blog.date)).yyyymmdd()
-
-blogLikes.innerText = blog.likes.length
+blogLikes.innerText = blog.likes.likesNumber
 blogComments.innerText = blog.comments.length
-blogShares.innerText = blog.shares.length
+//blogShares.innerText = blog.shares.length
