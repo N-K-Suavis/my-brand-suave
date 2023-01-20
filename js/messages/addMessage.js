@@ -11,7 +11,7 @@ const email = contactForm.querySelector('[name=email]')
 const message = contactForm.querySelector('[name=message]')
 const submit = contactForm.querySelector('[type=submit]')
 
-contactForm.addEventListener('submit', e => {
+contactForm.addEventListener('submit', async e => {
     e.preventDefault();
     if (name.value === '') {
         name.style.outline = '1px solid #f00'
@@ -38,7 +38,11 @@ contactForm.addEventListener('submit', e => {
         message.focus()
     }
     else {
-        let a = addMessage('name', 'email', 'body')
+        console.log({name:name.value,email:email.value,message:message.value})
+        let a = await fetch('http://localhost:3000/messages/',{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({name:name.value,email:email.value,message:message.value}) }).then(async function(res){
+            return await res.json()
+        })
         console.log(a)
+
     }
 })

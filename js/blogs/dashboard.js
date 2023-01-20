@@ -28,6 +28,10 @@ async function showblogs(){
             d="M23.167 5.8002C23.6598 5.3127 23.6598 4.5002 23.167 4.0377L20.2104 1.1127C19.7429 0.625195 18.9217 0.625195 18.4289 1.1127L16.1041 3.4002L20.8422 8.0877M0.790527 18.5627V23.2502H5.52863L19.5029 9.4127L14.7648 4.7252L0.790527 18.5627Z"
             fill="#1D1D20" />
     </svg>`
+        edit.addEventListener("click",async e=>{
+            e.preventDefault()
+            window.location.assign("editblog.html?id="+blog._id)
+        })
         func.append(edit)
         let del=document.createElement("span")
         del.innerHTML=` <svg width="19" height="24" viewBox="0 0 19 24" fill="none"

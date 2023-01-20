@@ -1,12 +1,10 @@
 import signoutsvg from './signoutsvg.js'
 
 let sign = document.querySelector('header #sign')
-let user = localStorage.getItem('user')
-
+let user = localStorage.getItem('token')
 let dash = document.querySelector('header #dashboard')
 
 if (user !== null) {
-    user = JSON.parse(user)
     let signOutBut = document.createElement('span')
     signOutBut.innerText = 'Sign out'
     signOutBut.addEventListener('click', e => {
@@ -19,8 +17,12 @@ if (user !== null) {
     let dashboard = document.createElement('a')
     dashboard.setAttribute('href', '/dashboard/')
     dashboard.innerText = 'Dashboard'
+    if (dash!== null){
+      
     dash.innerText = ''
-    dash.append(dashboard)
+
+    dash.append(dashboard)  
+    }
 }
 
 function signOutCheck() {
@@ -39,7 +41,7 @@ function signOutCheck() {
     front.setAttribute('class', 'front')
 
     let p = document.createElement('p')
-    p.innerText = `${user.name.split(' ')[0]}, do you want to sign out?`
+    p.innerText = `Do you want to sign out?`
     front.append(p)
     front.innerHTML += signoutsvg
     let div = document.createElement('div')
@@ -67,6 +69,6 @@ function signOutCheck() {
 }
 
 export function signOut() {
-    localStorage.removeItem('user')
+    localStorage.removeItem('token')
     window.location.assign('/')
 }

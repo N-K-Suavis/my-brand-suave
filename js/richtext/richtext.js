@@ -1,4 +1,4 @@
-export function createRich(id = 'richtext') {
+export async function createRich(id = 'richtext') {
     tinymce.init({
         selector: `#${id}`,
         plugins: [
@@ -13,4 +13,7 @@ export function createRich(id = 'richtext') {
 }
 export function getRich(id = 'richtext') {
     return tinymce.get(id).getContent()
+}
+export function setContent(content,id = 'richtext') {
+     tinymce.get(id).setContent(content)
 }

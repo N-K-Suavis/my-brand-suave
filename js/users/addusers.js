@@ -9,7 +9,7 @@ const password = USERFORM.querySelector('input[name=password]')
 const rePassword = USERFORM.querySelector('input[name=repeatepassword]')
 const submit = USERFORM.querySelector('button[type=submit]')
 
-USERFORM.addEventListener('submit', e => {
+USERFORM.addEventListener('submit', async e => {
     e.preventDefault()
 
     if (name.value === '') {
@@ -45,10 +45,11 @@ USERFORM.addEventListener('submit', e => {
         rePassword.focus()
     }
     else {
-        let info = adduser(name.value, email.value, password.value)
-        if (info.success) {
-            let user = info.value
-            localStorage.setItem('user', JSON.stringify(user))
+        //let info = adduser(name.value, email.value, password.value)
+       let response=  await fetch('http://localhost:3000/users/signup',{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({username:name.value,email:email.value,password:password.value})})
+        if (response.status == 200) {
+            let {token}= await response.json()
+            localStorage.setItem('token', (token))
             window.location.assign('/')
         }
         else {
@@ -59,6 +60,7 @@ USERFORM.addEventListener('submit', e => {
             }, 3000);
             email.value = ''
             email.focus()
+            
         }
     }
 })

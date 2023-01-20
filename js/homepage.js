@@ -4,17 +4,6 @@ let allblogs= async function(){
     return blogs.blogs
  }
     let blogs= await allblogs()
-Date.prototype.yyyymmdd = function () {
-    var mm = this.getMonth() + 1; // getMonth() is zero-based
-    var dd = this.getDate();
-
-    return [this.getFullYear(),
-    (mm > 9 ? '' : '0') + mm,
-    (dd > 9 ? '' : '0') + dd
-    ].join('/');
-};
-
-
 function display(blog) {
     let a = document.createElement('a')
     a.setAttribute('href', `/blog.html?id=${blog._id}`)
@@ -49,9 +38,6 @@ function display(blog) {
     return a
 }
 
-
-let list = document.querySelector('.blogList')
-
-for (let one of blogs) {
-    list.append(display(one))
-}
+let list = document.querySelector('.blogs .body')
+list.append(display(blogs[1]))
+list.append(display(blogs[2]))

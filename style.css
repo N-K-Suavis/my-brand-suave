@@ -87,6 +87,9 @@ a {
     border-radius: 10px;
     contain: content;
 }
+.card1:hover{
+    scale: 1.1em;
+}
 
 .card1 .content {
     color: var(--color-gray);
@@ -98,10 +101,13 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: linear-gradient(180deg, rgba(30, 29, 32, .77) 5%, rgba(29, 29, 32, .48) 18%,
-            rgba(27, 27, 30, .14) 30%, rgba(27, 27, 30, .14) 55%, rgba(24, 24, 27, .85) 75%);
-}
+    opacity: 0;
+   }
+.card1:hover .content {
+    opacity: 1;
+    background:  rgba(30, 29, 32, .77)
 
+}
 .card1 .content .title,
 .card1 .content h1,
 .card1 .content h2,
@@ -115,6 +121,13 @@ a {
 
 .card1 .content p {
     font-size: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .card1 .background {
@@ -354,14 +367,16 @@ section.blogs {
 }
 
 section.blogs>.body {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
     margin-top: 3rem;
+    gap: 5vw;
+
 }
 
-section.blogs>.body>div.card {
-    width: 45%;
+section.blogs>.body div.card {
+    
+
 }
 
 section.sign {
@@ -636,6 +651,10 @@ section.blog .feedbacks>div {
     align-items: center;
     gap: .5rem;
 }
+section.blog .feedbacks>div.active * {
+    fill:blue;
+    color:blue;
+}
 
 section.blog>*:last-child {
     margin: 1rem 0 3rem;
@@ -775,6 +794,11 @@ section.blog>*:last-child {
     -webkit-box-orient: vertical;
     flex:1;
 }
+
+.dashboard .list.blog ul li .grey-color.active {
+    overflow: auto;
+    display: block;
+}
 .dashboard .list.blog ul li svg {
     margin-left: 2rem;
 }
@@ -879,4 +903,35 @@ section.blog>*:last-child {
     max-height: 50vh;
     object-fit: contain;
     filter: drop-shadow(0 0 10px #3335);
+}
+.comments{
+    width:100%;
+    padding:20px;
+    color:black;
+    margin-bottom:15px;
+    fill:none;
+    display:flex;
+    flex-direction: column;
+}
+.comment{
+    border-bottom: 1px solid var(--color-bright-2);
+    padding: 0.5rem 0 ;
+    flex: 1fr;
+}
+.comment>*:first-of-type{
+    font-weight: bold;
+    font-size: 80%;
+    padding:5px 0;
+}
+.addcomment>textarea{
+    width:100%;
+    box-sizing: border-box;
+
+}
+.addcomment>button{
+    float:right;
+    border:none;
+    padding: 0.5em 1rem;
+    background-color: #333;
+    color:#eee
 }

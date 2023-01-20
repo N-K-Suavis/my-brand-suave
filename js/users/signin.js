@@ -7,7 +7,7 @@ const email = SignForm.querySelector('input[name=email]')
 const password = SignForm.querySelector('input[name=password]')
 const submit = SignForm.querySelector('button[type=submit]')
 
-SignForm.addEventListener('submit', e => {
+SignForm.addEventListener('submit', async e => {
     e.preventDefault()
     if (validEmail(email.value) === null) {
         email.style.outline = '1px solid #fa0'
@@ -18,13 +18,14 @@ SignForm.addEventListener('submit', e => {
         email.focus()
         return
     }
-    let user = find('email', email.value)
-    if (!user || user.password !== password.value) {
+    let response =  await fetch('http://localhost:3000/users/login/',{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({email:email.value,password:password.value})})
+    if (response.status!== 200) {
         alert('email or password is incorrect')
         email.focus()
         return
     }
+    let token= (await response.json()).token
 
-    localStorage.setItem('user', JSON.stringify(user))
+    localStorage.setItem('token',token)
     window.location.assign('/')
 })

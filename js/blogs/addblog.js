@@ -1,10 +1,9 @@
 import { createRich, getRich } from "../richtext/richtext.js";
 import { addBlog } from './blogs.js'
 
-let user = localStorage.getItem('user')
+let user = localStorage.getItem('token')
 
 if (user !== null) {
-    user = JSON.parse(user)
 
     createRich('richtext')
 
@@ -20,8 +19,6 @@ if (user !== null) {
             name: user.name,
             email: user.email
         }, body);
-
-       
         const options ={
             method:"POST",headers:{"content-type":"application/json",Authorization:"Bearer "+localStorage.getItem("token")},
 body:JSON.stringify({title:title.value,content:body,image:image.value}) 
