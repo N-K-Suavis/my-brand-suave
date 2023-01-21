@@ -18,7 +18,7 @@ SignForm.addEventListener('submit', async e => {
         email.focus()
         return
     }
-    let response =  await fetch('http://localhost:3000/users/login/',{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({email:email.value,password:password.value})})
+    let response =  await fetch('https://my-brand.onrender.com/users/login/',{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({email:email.value,password:password.value})})
     if (response.status!== 200) {
         alert('email or password is incorrect')
         email.focus()

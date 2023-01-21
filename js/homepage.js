@@ -1,5 +1,5 @@
 let allblogs= async function(){
-    let resp= await fetch('http://localhost:3000/blogs/')
+    let resp= await fetch('https://my-brand.onrender.com/blogs/')
     let blogs = await resp.json()
     return blogs.blogs
  }

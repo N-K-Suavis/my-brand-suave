@@ -23,7 +23,7 @@ if (user !== null) {
             method:"POST",headers:{"content-type":"application/json",Authorization:"Bearer "+localStorage.getItem("token")},
 body:JSON.stringify({title:title.value,content:body,image:image.value}) 
         }
-        await fetch('http://localhost:3000/blogs/',options).then(function(res){
+        await fetch('https://my-brand.onrender.com/blogs/',options).then(function(res){
             if (res.status ==200){
                 alert("blog created")
                 window.location.assign('/blogs.html')

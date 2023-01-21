@@ -1,5 +1,5 @@
 let allusers= async function(){
-    let resp= await fetch('http://localhost:3000/users/',{headers:{"content-type":"application/json",Authorization:"Bearer "+localStorage.getItem("token")}})
+    let resp= await fetch('https://my-brand.onrender.com/users/',{headers:{"content-type":"application/json",Authorization:"Bearer "+localStorage.getItem("token")}})
     let user= await resp.json()
     return user
  }
@@ -34,7 +34,7 @@ let allusers= async function(){
      </svg>`
          del.addEventListener("click",async e=>{
              e.preventDefault()
-             let delet= await fetch("http://localhost:3000/users/"+ user._id,{method:"DELETE",headers:{"content-type":"application/json",Authorization:"Bearer "+localStorage.getItem("token")},})
+             let delet= await fetch("https://my-brand.onrender.com/users/"+ user._id,{method:"DELETE",headers:{"content-type":"application/json",Authorization:"Bearer "+localStorage.getItem("token")},})
              item.remove()
       })
          func.append(del)*/

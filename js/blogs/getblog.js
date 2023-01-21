@@ -1,11 +1,11 @@
 const options ={
     headers:{"content-type":"application/json",Authorization:"Bearer "+localStorage.getItem("token")}
 } 
- let user= await fetch('http://localhost:3000/users/user',options).then(async res=>{
+ let user= await fetch('https://my-brand.onrender.com/users/user',options).then(async res=>{
     return await res.json()
  })
 let singleblog= async function(_id){
-    let resp= await fetch('http://localhost:3000/blogs/'+_id)
+    let resp= await fetch('https://my-brand.onrender.com/blogs/'+_id)
     let blog = await resp.json()
     return blog.blog
  }
@@ -38,7 +38,7 @@ blogLikes.parentNode.addEventListener("click",async function (e){
     const options ={
         method:"POST",headers:{"content-type":"application/json",Authorization:"Bearer "+localStorage.getItem("token")}
     } 
-    await fetch('http://localhost:3000/blogs/'+blog._id+'/like/',options).then(async function(res){
+    await fetch('https://my-brand.onrender.com/blogs/'+blog._id+'/like/',options).then(async function(res){
         if (res.status ==200){
             let b=await res.json()
            blogLikes.innerText =b.likedBlog.likes.likesNumber
@@ -58,7 +58,7 @@ function checkLike(b){
 }
 checkLike(blog)
 let comments= document.querySelector(".comments")
-    fetch('http://localhost:3000/blogs/'+blog._id+'/comments/')
+    fetch('https://my-brand.onrender.com/blogs/'+blog._id+'/comments/')
     .then(res=>res.json())
     .then(data=>{
         console.log(data.comments)
@@ -80,7 +80,7 @@ let cForm=document.querySelector(".addcomment")
 let comm= cForm.querySelector("textarea")
 cForm.addEventListener("submit", async e=>{
     e.preventDefault()
-    await fetch('http://localhost:3000/blogs/'+blog._id+'/comments/',{method:"POST",headers:{"content-type":"application/json",Authorization:"Bearer "+localStorage.getItem("token")},body:JSON.stringify({message:comm.value})})
+    await fetch('https://my-brand.onrender.com/blogs/'+blog._id+'/comments/',{method:"POST",headers:{"content-type":"application/json",Authorization:"Bearer "+localStorage.getItem("token")},body:JSON.stringify({message:comm.value})})
             .then(res=>res.json())
             .then(commentmsg=>{
                 const comment= document.createElement("div")

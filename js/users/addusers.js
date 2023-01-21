@@ -46,7 +46,7 @@ USERFORM.addEventListener('submit', async e => {
     }
     else {
         //let info = adduser(name.value, email.value, password.value)
-       let response=  await fetch('http://localhost:3000/users/signup',{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({username:name.value,email:email.value,password:password.value})})
+       let response=  await fetch('https://my-brand.onrender.com/users/signup',{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({username:name.value,email:email.value,password:password.value})})
         if (response.status == 200) {
             let {token}= await response.json()
             localStorage.setItem('token', (token))

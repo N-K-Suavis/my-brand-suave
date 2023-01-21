@@ -1,13 +1,13 @@
 import { createRich, getRich,setContent } from "../richtext/richtext.js";
 let singleblog= async function(_id){
-    let resp= await fetch('http://localhost:3000/blogs/'+_id)
+    let resp= await fetch('https://my-brand.onrender.com/blogs/'+_id)
     let blog = await resp.json()
     return blog.blog
  }
  const options ={
     headers:{"content-type":"application/json",Authorization:"Bearer "+localStorage.getItem("token")}
 } 
- let user= await fetch('http://localhost:3000/users/user',options).then(async res=>{
+ let user= await fetch('https://my-brand.onrender.com/users/user',options).then(async res=>{
     return await res.json()
  })
 
@@ -37,7 +37,7 @@ if (user.email) {
             method:"PUT",headers:{"content-type":"application/json",Authorization:"Bearer "+localStorage.getItem("token")},
 body:JSON.stringify({title:title.value,content:body,image:image.value}) 
         }
-        await fetch('http://localhost:3000/blogs/'+blog._id+'/',options).then(async function(res){
+        await fetch('https://my-brand.onrender.com/blogs/'+blog._id+'/',options).then(async function(res){
             if (res.status ==200){
                  window.location.assign('/blog.html?id='+blog._id+'/')
 

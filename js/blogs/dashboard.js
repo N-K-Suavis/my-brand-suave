@@ -1,5 +1,5 @@
 let allblogs= async function(){
-   let resp= await fetch('http://localhost:3000/blogs/')
+   let resp= await fetch('https://my-brand.onrender.com/blogs/')
    let blogs = await resp.json()
    return blogs.blogs
 }
@@ -42,7 +42,7 @@ async function showblogs(){
     </svg>`
         del.addEventListener("click",async e=>{
             e.preventDefault()
-            let delet= await fetch("http://localhost:3000/blogs/"+ blog._id,{method:"DELETE",headers:{"content-type":"application/json",Authorization:"Bearer "+localStorage.getItem("token")},})
+            let delet= await fetch("https://my-brand.onrender.com/blogs/"+ blog._id,{method:"DELETE",headers:{"content-type":"application/json",Authorization:"Bearer "+localStorage.getItem("token")},})
             item.remove()
      })
         func.append(del)

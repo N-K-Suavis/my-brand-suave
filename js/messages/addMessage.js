@@ -39,7 +39,7 @@ contactForm.addEventListener('submit', async e => {
     }
     else {
         console.log({name:name.value,email:email.value,message:message.value})
-        let a = await fetch('http://localhost:3000/messages/',{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({name:name.value,email:email.value,message:message.value}) }).then(async function(res){
+        let a = await fetch('https://my-brand.onrender.com/messages/',{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({name:name.value,email:email.value,message:message.value}) }).then(async function(res){
             return await res.json()
         })
         console.log(a)
